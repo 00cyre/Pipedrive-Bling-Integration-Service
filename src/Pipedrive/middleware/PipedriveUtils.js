@@ -1,0 +1,9 @@
+const checkGain = (req)=>{
+    const previous = req.body.previous;
+    const current = req.body.current;
+    if (previous.won_deals_count < current.won_deals_count)
+    {
+        return true
+    }
+}
+module.exports = {checkGain}
