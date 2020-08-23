@@ -1,23 +1,25 @@
 const axios = require("axios");
 const { formatURL } = require("../shared/utils");
-const { insert } = require("../db/baseController");
+const { insert, select } = require("../db/baseController");
 const insertOpportunities = async (data) => {
-    try {
-        data.forEach(async (entry) => {
-            await insert(entry);
-        });
-    } catch (error) {
-        throw new Error(error)
-    }
+    data.forEach(async (entry) => {
+        await insert(entry);
+    });
+}
+const search = async (req) => {
+    const filter = req.query.filter == undefined ? null : req.query.filter
+    const result = !!filter ? await select(filter) : await select();
+    return result
 }
 const getDeals = async () => {
     const filter = "deals?status=won&start=0"
     const urlDeals = formatURL(filter)
-    try {
-        const res = await axios.get(urlDeals);
-        return res
-    } catch (error) {
-        throw new Error(error)
-    }
+    const res = await axios.get(urlDeals);
+    return res
 }
-module.exports = { getDeals, insertOpportunities }
+const searchAndUpdateOpportunities = async () => {
+    const deals = await getDeals();
+    await insertOpportunities(deals.data.data)
+    return deals.data.data
+}
+module.exports = { getDeals, insertOpportunities, searchAndUpdateOpportunities, search }
