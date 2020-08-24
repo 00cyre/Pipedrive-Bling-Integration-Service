@@ -1,6 +1,6 @@
 const express = require('express');
 const { validateRequest } = require('./middleware/PipedriveUtils');
-const { getDeals, insertOpportunities, searchAndUpdateOpportunities, search } = require('./PipedriveController');
+const { getDeals, insertOpportunities, searchAndUpdateOpportunities, search } = require('./pipedriveController');
 const e = require('express');
 const { client } = require('../db/config');
 const PipedriveRoute = express.Router();
