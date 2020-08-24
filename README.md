@@ -5,6 +5,7 @@
 When I started the test the first challenge I got into was understanding how those systems worked, since I've never used neither saw them before, but it didn't took long until I realized what kind of integration was required in that process.
 The flow of my development began into understanding how pipedrive would work, so the first thing I've noticed is in the test the tests require a route to update the values based on won deals in pipedrive, but pipedrive as i was researching it, it has a webhook, so i said, why not and made them both.
 First i did the Pipedrive integration, and calls testing the API, and afterwards i made the MongoDb, and then i made the Bling integration. I did in that order specifically because the business rules and "complicated" stuff would be only on the database and the Pipedrive, since Bling would be only forwarding tasks to add it in the dashboard.
+
 **I thought i would need to manually check if registries were already inserted on Bling but it seems he already do that automatically, so props to them lol.**
 
 # Development Flow
