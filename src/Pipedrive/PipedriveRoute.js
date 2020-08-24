@@ -1,10 +1,9 @@
 const express = require('express');
-const { validateRequest } = require('./middleware/PipedriveUtils');
-const { getDeals, insertOpportunities, searchAndUpdateOpportunities, search } = require('./PipedriveController');
-const e = require('express');
+const { validateRequest } = require('./middleware/pipedriveUtils');
+const { searchAndUpdateOpportunities, search } = require('./pipedriveController');
 const { client } = require('../db/config');
 const PipedriveRoute = express.Router();
-client.connect(async (err) => {
+client.connect(async () => {
     PipedriveRoute.get('/', async (req, res) => {
         try {
             const response = await search(req);
