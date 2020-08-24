@@ -1,6 +1,6 @@
 const express = require("express")
 const bodyParser = require("body-parser")
-const { PipedriveRoute } = require("./src/Pipedrive/PipedriveRoute");
+const { PipedriveRoute } = require("./src/Pipedrive/pipedriveRoute");
 const { client } = require("./src/db/config");
 require('dotenv').config();
 const app = express()

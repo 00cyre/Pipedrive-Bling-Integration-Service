@@ -3,6 +3,6 @@ const formatURL = (filter) => {
 }
 
 const filterData = (data) => {
-    return { title: data.title, first_won_time: data.first_won_time, value: data.value }
+    return { id: data.id, title: data.title, first_won_time: data.first_won_time, value: data.value,owner_name: data.owner_name }
 }
 module.exports = { formatURL, filterData }
