@@ -1,4 +1,5 @@
 
+
 # Pipedrive/Bling Integration Service
 
 # Developer Notes
@@ -12,7 +13,7 @@ First i did the Pipedrive integration, and calls testing the API, and afterwards
 The DEVFLOW i've used in this project is based on features, so the github branches are based on the features, so Pipedrive has it own branch with Pipedrive changes only, and that applies to the project architecture aswell.
 
 ![Project](https://i.snipboard.io/ZFudXR.jpg)
-
+![enter image description here](https://i.snipboard.io/z9y5gw.jpg)
 # Bonus Points
 I made the route asked for updating the values on the mongoDb database with a post call, but I took it further and made the integration with the Pipedrive webhook, so when a new deal is won it automatically updates the database and creates a new request on bling.
 
@@ -27,6 +28,8 @@ Also the event i set up to trigger the webhook was updated.person
 # What i could've added
 One thing I didin't got in this project was unitary tests, i could do it but to not delay the deliver even further i decided to not do it, since it wasn't a necessary requisite i let it out of the service.
 I didn't implemented another extra which would be using the query from MongoDb,i even added some code testing it, but i couldn't get it to work i removed it, but since this wasn't asked to do either, i let it out aswell.
+The code is ok but definitely can get better, since the time was a huge factor, i tried to keep things organized, but at the same time we all know we are going to miss something.
+The MongoDb driver configuration is not secure, neither adequate for a prod environment.
 
 # Api calls
 The basic calls to this micro-service are:
@@ -47,4 +50,4 @@ This will only trigger when the won button is clicked
 
 This route will return all the deals registered on the database
 
-#I hope i covered all the points, and any questions, let me know that I'll explain it.
+## I hope i covered all the points, and any questions, let me know that I'll explain it.
