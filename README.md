@@ -45,3 +45,5 @@ This will only trigger when the won button is clicked
 > GET /api/v1/pipedrive
 
 This route will return all the deals registered on the database
+
+#I hope i covered all the points, and any questions, let me know that I'll explain it.
